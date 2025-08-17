@@ -1,538 +1,207 @@
-﻿<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<!doctype html>
+<html lang="id">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afrizzal — Portfolio</title>
+  <meta name="description" content="Afrizzal — Digital Marketer • Full-Stack Developer • Cloud Engineer. Portofolio, proyek terpilih, dan layanan." />
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link href="http://fonts.googleapis.com/css?family=Heebo:300,400,500,700,900" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Afrizzal — Portfolio" />
+  <meta property="og:description" content="Proyek terpilih dan layanan: UI/UX, development, DevOps, dan cloud." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afrizzal.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
-	<link rel="stylesheet" href="css/app.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="css/colors.php?color=f7c25e" type="text/css" />
-	<title>Afrizzal | A simply Portfolio</title>
+  <!-- Favicons (opsional) -->
+  <link rel="icon" href="favicon.ico">
+
+  <link rel="preload" as="style" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
 
-<body class="stretched">
-	<div id="wrapper" class="clearfix">
-		<section id="slider" class="slider-element min-vh-md-100 py-4 include-header" style="background: #FFF url('images/hero-bg.svg') repeat top center; background-size: cover;">
-			<div class="slider-inner">
-				<div class="vertical-middle slider-element-fade">
-					<div class="container text-center py-5">
-						<div class="emphasis-title mb-2">
+<body>
+  <!-- Skip link untuk aksesibilitas -->
+  <a class="skip-link" href="#home">Lewati ke konten</a>
 
-							<h2 class="font-weight-bolder mb-0">Hi there! I'm a professional:</h2>
-							<h2>
-								<span id="oc-images" class="owl-carousel image-carousel carousel-widget" data-items="1" data-margin="0" data-autoplay="3000" data-loop="true" data-nav="false" data-pagi="false" data-animate-in="fadeInUp">
-									<div class="oc-item gradient-text gradient-red-yellow text-uppercase">Digital Marketers</div>
-									<div class="oc-item gradient-text gradient-red-yellow text-uppercase">Full Stack Developer</div>
-									<div class="oc-item gradient-text gradient-red-yellow text-uppercase">Cloud Engineer</div>
-								</span>
-							</h2>
-						</div>
-						<br><br>
-						<span>
-							<div class="mx-auto" style="max-width: 500px">
-								<p class="lead font-weight-normal text-dark mb-5">A self-driven, quick starter, and passionate individual with curious mind who enjoys solving a complex and challenging a problem.</p>
-							</div>
-						</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="content">
-			<div class="content-wrap p-0">
-				<div class="section mb-0 pt-3 pb-0" style="background-color: #F4F4F4; margin-top: 150px; overflow: visible;">
-					<div class="shape-divider" data-shape="wave" data-height="100" data-outside="true" data-flip-vertical="true" data-fill="#F4F4F4"></div>
-					<div class="container">
-						<div class="row justify-content-center text-center mt-5">
-							<div class="col-lg-9">
-								<div>
-									<h2 class="font-weight-bolder h1 mb-4">Hi, I am <span class="gradient-text gradient-horizon">Afrizzal</span></h2>
-									<p class="mb-5 lead text-black-25 font-weight-extralight">Since beginning my journey as a freelance WordPress developer nearly 7 years ago. I've done remote and on-site work for agencies, startup industry, retail, manufacture industry. With an experience of focusing in Digital Marketing, Full Stack Developer, and Cloud Infrastructure Engineer.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="d-flex justify-content-center position-relative">
-						<div class="parallax min-vh-75" style="background-image: url('images/me.jpg'); background-size: cover; background-position: center center;" data-bottom-top="width: 40vw" data-center-top="width: 100vw;">
-							<div class="row align-items-center justify-content-center h-100">
-								<!--<div class="col-auto text-center">
-									<a href="#" class="display-4 font-weight-bolder text-white d-inline-block mx-4 h-op-08 op-ts"><u>#aff</u></a>
-									<a href="#" class="display-4 font-weight-bolder text-white d-inline-block mx-4 h-op-08 op-ts"><u>#portfolio</u></a>
-								</div>-->
-							</div>
-						</div>
-						<div class="shape-divider" data-shape="wave" data-position="bottom"></div>
-					</div>
-				</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Afrizzal Home">Afrizzal<span>.</span></a>
 
-				<div class="container" style="max-width: 1000px">
-					<div class="row col-mb-30 mt-5">
-						<div class="col-md-4">
-							<div class="d-flex align-items-center justify-content-center">
-								<div class="counter counter-xlarge text-dark font-weight-bolder"><span data-from="1" data-to="5" data-refresh-interval="2" data-speed="600"></span></div>
-								<span>+ Years of<br>Experience.</span>
-							</div>
-						</div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Buka navigasi">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
 
-						<div class="col-md-4">
-							<div class="d-flex align-items-center justify-content-center">
-								<div class="counter counter-xlarge text-dark font-weight-bolder"><span data-from="0" data-to="83" data-refresh-interval="50" data-speed="1500"></span></div>
-								<span>% of Works <br>Completed.</span>
-							</div>
-						</div>
+      <nav id="site-nav" class="site-nav" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#contact">Kontak</a>
+        <a class="btn btn-small" href="cv.pdf" target="_blank" rel="noopener">Unduh CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle tema">🌓</button>
+      </nav>
+    </div>
+  </header>
 
-						<div class="col-md-4">
-							<div class="d-flex align-items-center justify-content-center">
-								<div class="counter counter-xlarge text-dark font-weight-bolder"><span data-from="0" data-to="100" data-refresh-interval="30" data-speed="1200"></span></div>
-								<span>% Positive<br>Feedback.</span>
-							</div>
-						</div>
-					</div>
-					<div class="line line-sm mb-0"></div>
-				</div>
+  <main id="home">
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Halo, saya</p>
+          <h1 class="headline">Afrizzal</h1>
+          <p class="subhead">
+            Digital Marketer • Full-Stack Developer • Cloud Engineer.<br>
+            Saya membangun produk web yang cepat, rapi, dan mudah di-scale.
+          </p>
 
-				<div class="clear"></div>
+          <div class="hero-ctas">
+            <a class="btn" href="#projects">Lihat Proyek</a>
+            <a class="btn btn-ghost" href="#contact">Diskusikan Kebutuhan</a>
+          </div>
 
-				<div class="section m-0">
-					<div class="container">
-						<div class="row align-items-end justify-content-between mb-5">
-							<div class="col-lg-5 offset-lg-1">
-								<div>
-									<h3 class="font-weight-bolder h1 mb-4">Latest Creative Works,<br>and Selected Projects</h3>
-									<p class="lead mb-0">Here's best selected project I ever made.</p>
-								</div>
-							</div>
-							<div class="col-auto">
-								<a href="https://github.com/afrizzal" class="button button-dark button-border rounded-pill">Check All My Repository <i class="icon-line-arrow-right"></i></a>
-							</div>
-						</div>
+          <ul class="socials" aria-label="Media sosial">
+            <li><a aria-label="GitHub" href="https://github.com/afrizzal" target="_blank" rel="noopener" title="GitHub">
+              <!-- Ikon GitHub (SVG inline) -->
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 .  ..."/></svg>
+            </a></li>
+            <li><a aria-label="LinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.5-2.7 5-2.7 5.4 0 6.4 3.5 6.4 8.1V24h-5v-7.1c0-1.7 0-3.8-2.3-3.8-2.3 0-2.6 1.8-2.6 3.7V24H8z"/></svg>
+            </a></li>
+            <li><a aria-label="Email" href="mailto:hello@yourdomain.com" title="Email">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 13 0 6V4l12 7L24 4v2z"/><path fill="currentColor" d="M0 6v14h24V6l-12 7z"/></svg>
+            </a></li>
+          </ul>
+        </div>
 
-						<div class="row justify-content-center col-mb-50">
-							<div class="col-lg-6 h-translatey-3 tf-ts">
-								<a href="https://www.kanafurniture.com/" class="portfolio-item" target="_blank">
-									<div class="portfolio-image">
-										<img src="images/works/1.jpg" alt="Portfoio Item">
-										<div class="bg-overlay">
-											<div class="bg-overlay-content align-items-start justify-content-start flex-column px-5 py-4">
-												<h3 class="mb-0 mt-1">Furniture Ecommerce Website</h3>
-											</div>
-											<div class="bg-overlay-content align-items-start justify-content-end p-4">
-												<div class="overlay-trigger-icon bg-dark text-white" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i class="icon-line-link"></i></div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
+        <div class="hero-art" aria-hidden="true">
+          <!-- Ilustrasi dekoratif -->
+          <div class="blob b1"></div>
+          <div class="blob b2"></div>
+          <div class="blob b3"></div>
+        </div>
+      </div>
+      <a class="scroll-down" href="#about" aria-label="Gulir ke Tentang">↓</a>
+    </section>
 
-							<div class="col-lg-6 h-translatey-3 tf-ts">
-								<a href="https://apps.apple.com/id/app/kana-furniture/id1538397442" class="portfolio-item" target="_blank">
-									<div class="portfolio-image">
-										<img src="images/works/2.jpg" alt="Portfoio Item">
-										<div class="bg-overlay">
-											<div class="bg-overlay-content align-items-start justify-content-start flex-column px-5 py-4">
-												<h3 class="mb-0 mt-1">Mobile Membership App</h3>
-											</div>
-											<div class="bg-overlay-content align-items-start justify-content-end p-4">
-												<div class="overlay-trigger-icon bg-dark text-white" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i class="icon-line-link"></i></div>
-											</div>
-										</div>`
-									</div>
-								</a>
-							</div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div class="card card-elevated">
+          <h2>Tentang Saya</h2>
+          <p>
+            Saya fokus pada solusi end-to-end: riset, desain, implementasi, hingga optimasi pertumbuhan.
+            Berpengalaman di <strong>marketing performance</strong>, <strong>pengembangan web</strong>,
+            dan <strong>cloud/DevOps</strong>.
+          </p>
+          <ul class="bullets">
+            <li>Website & aplikasi yang cepat (Core Web Vitals).</li>
+            <li>Automasi & CI/CD: build, test, deploy.</li>
+            <li>Optimasi kampanye: SEO/SEM, tracking, dan dashboard.</li>
+          </ul>
+        </div>
+        <div class="card card-elevated profile">
+          <img src="images/profile.jpg" alt="Foto Afrizzal" loading="lazy" />
+          <div>
+            <h3>Info Singkat</h3>
+            <dl class="meta">
+              <dt>Role</dt><dd>Full-Stack • Cloud • Marketing</dd>
+              <dt>Domisili</dt><dd>Indonesia</dd>
+              <dt>Email</dt><dd><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
 
-							<div class="col-lg-6 h-translatey-3 tf-ts">
-								<a href="" class="portfolio-item" target="_blank">
-									<div class="portfolio-image">
-										<img src="images/works/3.jpg" alt="Portfoio Item">
-										<div class="bg-overlay">
-											<div class="bg-overlay-content align-items-start justify-content-start flex-column px-5 py-4">
-												<h3 class="mb-0 mt-1">Microsoft Dynamics AX</h3>
-											</div>
-											<div class="bg-overlay-content align-items-start justify-content-end p-4">
-												<div class="overlay-trigger-icon bg-dark text-white" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i class="icon-line-link"></i></div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Keahlian</h2>
+        <ul class="tags">
+          <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Node.js</li>
+          <li>Go</li><li>PHP (Laravel)</li><li>Python</li>
+          <li>MySQL</li><li>PostgreSQL</li><li>Redis</li>
+          <li>Docker</li><li>Kubernetes</li><li>Nginx</li><li>CI/CD</li>
+          <li>SEO</li><li>Google Ads</li><li>GA4/GTM</li>
+        </ul>
+      </div>
+    </section>
 
-							<div class="col-lg-6 h-translatey-3 tf-ts">
-								<a href="http://hris.avenirstudio.net/" class="portfolio-item" target="_blank">
-									<div class="portfolio-image">
-										<img src="images/works/4.jpg" alt="Portfoio Item">
-										<div class="bg-overlay">
-											<div class="bg-overlay-content align-items-start justify-content-start flex-column px-5 py-4">
-												<h3 class="mb-0 mt-1">Human Resource Information System</h3>
-											</div>
-											<div class="bg-overlay-content align-items-start justify-content-end p-4">
-												<div class="overlay-trigger-icon bg-dark text-white" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i class="icon-line-link"></i></div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Proyek Terpilih</h2>
+        <div class="projects-grid" id="projectsGrid" aria-live="polite">
+          <!-- Kartu proyek di-generate dari JS agar mudah diubah -->
+        </div>
+        <p class="note">Ingin lihat lebih banyak? <a href="https://github.com/afrizzal" target="_blank" rel="noopener">Kunjungi GitHub saya.</a></p>
+      </div>
+    </section>
 
-					</div>
-				</div>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Pengalaman</h2>
+        <ol class="timeline" id="timeline">
+          <!-- Item timeline diisi via JS -->
+        </ol>
+      </div>
+    </section>
 
-				<div class="clear"></div>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Kontak</h2>
+          <p>Punya ide proyek atau butuh bantuan? Kirim pesan—saya akan balas secepatnya.</p>
+          <ul class="bullets">
+            <li>Email: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></li>
+            <li>LinkedIn: <a target="_blank" rel="noopener" href="https://www.linkedin.com/">linkedin.com/in/...</a></li>
+          </ul>
+        </div>
+        <form class="card card-elevated contact-form" action="mailto:hello@yourdomain.com" method="post" enctype="text/plain">
+          <label>Nama
+            <input type="text" name="Nama" required />
+          </label>
+          <label>Email
+            <input type="email" name="Email" required />
+          </label>
+          <label>Pesan
+            <textarea name="Pesan" rows="4" required></textarea>
+          </label>
+          <button class="btn" type="submit">Kirim</button>
+          <p class="form-note">Form ini menggunakan <code>mailto:</code>. Untuk produksi, disarankan pakai layanan form (mis. Formspree) atau backend/API.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-				<div class="section bg-transparent py-5">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Afrizzal. Semua hak dilindungi.</p>
+      <div class="footer-links">
+        <a href="#about">Tentang</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </div>
+  </footer>
 
-					<div class="container">
-						<div class="row align-items-end mb-5">
-							<div class="col-lg-5 offset-lg-1">
-								<h3 class="font-weight-bolder h1">The ways I can help you</h3>
-								<p>I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally help others solved their problems.</p>
-							</div>
-						</div>
-
-						<div  class="row gutter-50 mb-5 align-items-stretch">
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #E2E8D8;">
-									<div class="mt-5"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<div class="d-flex align-items-center mb-4">
-												<!--<img src="images/icons/sketch.svg" height="50" alt="Image">-->
-												<img src="images/icons/uiux.png" height="50" alt="Image" class="ml-3">
-											</div>
-											<h3 class="card-title font-weight-bolder">UI/UX Design</h3>
-											<p class="card-text mb-0 mt-2 font-weight-light">Designing attractive user interface for mobile and web application, and creating the flow of application better user experience result.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #C2DFEC;">
-									<div class="mt-4"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<img src="images/icons/social.svg" alt="Image" class="mb-4" height="50">
-											<h4 class="card-title font-weight-bolder">Application Development</h4>
-											<p class="card-text mb-0 mt-2 font-weight-light">Have an experience for build stunning web and mobile application like Ecommerce webiste, Management Information System and ERP.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #FADCE4">
-									<div class="mt-4"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<img src="images/icons/seo.svg" height="50" alt="Image" class="mb-4">
-											<h4 class="card-title font-weight-bolder">Digital Marketing</h4>
-											<p class="card-text mb-0 mt-2 font-weight-light">With 5+ years of experience building and implementing strategies focused on SEO, Adwords & Facebook Ads for Retail Industry.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #E4E4E4">
-									<div class="mt-6"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<img src="images/icons/devops.png" height="50" alt="Image" class="mb-4">
-											<h3 class="card-title font-weight-bolder">DevOps Engineer</h3>
-											<p class="card-text mb-0 mt-2 font-weight-light">Good hands-on knowledge of source Code Management (Version Control System). Proficient in developing Continous Integration/Delivery pipelines.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #E5E3CE;">
-									<div class="mt-5"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<img src="images/icons/hosting.svg" height="50" alt="Image" class="mb-4">
-											<h3 class="card-title font-weight-bolder">Cloud Infra-Architecture</h3>
-											<p class="card-text mb-0 mt-2 font-weight-light">Experience working on multiple cloud platform. Hosting and maintaining website & apps on vm Instances along with database Integration.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="card d-flex align-items-end flex-column p-4 border-0" style="background-color: #C9D6CF">
-									<div class="mt-6"></div>
-									<div class="mt-auto">
-										<div class="card-body">
-											<img src="images/icons/plugins.png" height="50" alt="Image" class="mb-4">
-											<h3 class="card-title font-weight-bolder">Others</h3>
-											<p class="card-text mb-0 mt-2 font-weight-light">Hungry of learning about new things in Tech, and deploying deep learning models on cloud to use on mobile device. </p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="clear"></div>
-
-					<div class="container flex-column">
-						<div class="row align-items-end">
-							<div class="col-lg-6 offset-lg-1">
-								<h3 class="font-weight-bolder h1">We value our relationships</h3>
-								<p>Here are a few technology I've worked on recently.</p>
-							</div>
-						</div>
-						<div>
-							<ul id="myTab" class="nav nav-tabs boot-tabs">
-							  <li class="nav-item"><a class="nav-link active" href="#frontend" data-toggle="tab">Front-End</a></li>
-							  <li class="nav-item"><a class="nav-link" href="#backend" data-toggle="tab">Back-End</a></li>
-							  <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#mobile" id="myTabDrop1" data-toggle="dropdown">Mobile Development</a>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-								  <a class="dropdown-item" href="#android" tabindex="-1" data-toggle="tab">Android</a>
-								  <a class="dropdown-item" href="#ios" tabindex="-1" data-toggle="tab">iOS</a>
-								</ul>
-							  </li>
-							  <li class="nav-item"><a class="nav-link" href="#devops" data-toggle="tab">DevOps</a></li>
-							</ul>
-							<div id="myTabContent" class="tab-content">
-							  <div class="tab-pane fade show active" id="frontend">
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/html5.png" alt="html5" class="mr-2">
-										<img src="images/tools/css3.png" alt="css3" class="mr-2">
-										<img src="images/tools/js.png" alt="JavaScript" class="mr-2">
-										<img src="images/tools/bootstrap.png" alt="Bootstrap" class="mr-2">
-										<img src="images/tools/sass.png" alt="sass" class="mr-2">
-									</div>
-								</div><br>
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/angular.png" alt="Angular JS" class="mr-2">
-										<img src="images/tools/vue.png" alt="Vue Js" class="mr-2">
-										<img src="images/tools/react.png" alt="React JS" class="mr-2">	
-										<img src="images/tools/tailwind.png" alt="Tailwind CSS" class="mr-2">
-										<img src="images/tools/chakra-ui.png" alt="Chakra-UI" class="mr-2">						
-									</div>
-								</div>
-							  </div>
-							  <div class="tab-pane fade" id="backend">
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/laravel.png" alt="Laravel" class="mr-2">
-										<img src="images/tools/node.png" alt="Node" class="mr-2">
-										<img src="images/tools/net.png" alt=".Net" class="mr-2">
-										<img src="images/tools/ruby.png" alt="Ruby" class="mr-2">
-										<img src="images/tools/npm.png" alt="NPM" class="mr-2">
-									</div>
-								</div><br>
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/lumen.png" alt="Laravel Lumen" class="mr-2">
-										<img src="images/tools/symfony.png" alt="Symfony" class="mr-2">	
-										<img src="images/tools/mysql.png" alt="MySQL" class="mr-2">	
-										<img src="images/tools/mongodb.png" alt="mongodb" class="mr-2">	
-										<img src="images/tools/postgresql.png" alt="PostgreSQL" class="mr-2">				
-									</div>
-								</div>
-							  </div>
-							  <div class="tab-pane fade" id="andoid">
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/flutter.png" alt="Flutter" class="mr-2">
-										<img src="images/tools/gradle.png" alt="Gradle" class="mr-2">
-										<img src="images/tools/kotlin.png" alt="Kotlin" class="mr-2">
-										<img src="images/tools/jetpack.png" alt="Jetpack" class="mr-2">
-										<img src="images/tools/xamarin.png" alt="Xamarin" class="mr-2">
-									</div>
-								</div>
-							  </div>
-							  <div class="tab-pane fade" id="ios">
-								<div class="row">
-									<div class="col-lg-12 col-12 gutter-100">
-										<img src="images/tools/homebrew.png" alt="Homebrew" class="mr-2">
-										<img src="images/tools/swift.png" alt="Swift" class="mr-2">
-										<img src="images/tools/swiftyjson.png" alt="Swiftyjson" class="mr-2">
-										<img src="images/tools/cocoapods.png" alt="CocoaPods" class="mr-2">
-										<img src="images/tools/alamofire.png" alt="Alamofire" class="mr-2">
-										<img src="images/tools/rx.png" alt="RX" class="mr-2">
-									</div>
-							  	</div>
-							 	</div>
-							  <div class="tab-pane fade" id="devops">
-									<div class="row">
-										<div class="col-lg-12 col-12 gutter-100">
-											<img src="images/tools/github.png" alt="Github" class="mr-2">
-											<img src="images/tools/bitbucket.png" alt="BitBucket" class="mr-2">
-											<img src="images/tools/aws.png" alt="AWS" class="mr-2">
-											<img src="images/tools/docker.png" alt="Docker" class="mr-2">
-											<img src="images/tools/nginx.png" alt="ngingX" class="mr-2">
-											<img src="images/tools/kafka.png" alt="Kafka" class="mr-2">
-											<img src="images/tools/laradock.png" alt="Laradock" class="mr-2">
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-lg-12 col-12 gutter-100">
-											<img src="images/tools/gitlab.png" alt="Gitlab" class="mr-2">
-											<img src="images/tools/alicloud.png" alt="AliCloud" class="mr-2">
-											<img src="images/tools/gcp.png" alt="Google Cloud Platform" class="mr-2">	
-											<img src="images/tools/kube.png" alt="Kubernetes" class="mr-2">
-											<img src="images/tools/tomcat.png" alt="Tomcat" class="mr-2">
-											<img src="images/tools/reddis.png" alt="Reddis" class="mr-2">
-											<img src="images/tools/azure.png" alt="Azure" class="mr-2">		
-										</div>
-									</div>
-							 </div>
-							</div>
-						</div>
-					</div>
-					</div>
-					</div>
-
-				<div class="section m-0" style="background: #f1efe5 url('images/bg.svg') no-repeat right center; padding-top: 240px">
-					<div class="shape-divider" data-shape="wave-4" data-height="150" id="shape-divider-6017"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 140" preserveAspectRatio="none"><path class="shape-divider-fill" fill="#F8F7F2" d="M0 51.76c36.21-2.25 77.57-3.58 126.42-3.58 320 0 320 57 640 57 271.15 0 312.58-40.91 513.58-53.4V0H0z" opacity="0.3"></path><path class="shape-divider-fill" d="M0 24.31c43.46-5.69 94.56-9.25 158.42-9.25 320 0 320 89.24 640 89.24 256.13 0 307.28-57.16 481.58-80V0H0z" opacity="0.5"></path><path class="shape-divider-fill" d="M0 0v3.4C28.2 1.6 59.4.59 94.42.59c320 0 320 84.3 640 84.3 285 0 316.17-66.85 545.58-81.49V0z"></path></svg></div>
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-5">
-								<h3 class="font-weight-bolder h1 my-5">A few things people<br>normally ask me</h3>
-								<div class="accordion" data-collapsible="true">
-
-									<div class="accordion-header">
-										<div class="accordion-icon">
-											<i class="accordion-closed icon-line-plus color gradient-text gradient-red-yellow"></i>
-											<i class="accordion-open icon-line-minus color gradient-text gradient-red-yellow"></i>
-										</div>
-										<div class="accordion-title">
-											What;s your life goals?
-										</div>
-									</div>
-									<div class="accordion-content">Finding a hapinness, and learn how to put it first. Than spread to others.</div>
-
-									<div class="accordion-header">
-										<div class="accordion-icon">
-											<i class="accordion-closed icon-line-plus color gradient-text gradient-red-yellow"></i>
-											<i class="accordion-open icon-line-minus color gradient-text gradient-red-yellow"></i>
-										</div>
-										<div class="accordion-title">
-											What is your main focus?
-										</div>
-									</div>
-									<div class="accordion-content">Since beginning from school graduated I'm interesting about tech industry especially in Programming Language. Starting from learn basic of C, and here I am.</div>
-
-									<div class="accordion-header" id="id-accordion-3">
-										<div class="accordion-icon">
-											<i class="accordion-closed icon-line-plus color gradient-text gradient-red-yellow"></i>
-											<i class="accordion-open icon-line-minus color gradient-text gradient-red-yellow"></i>
-										</div>
-										<div class="accordion-title">
-											Should programming be a hobby or needs?
-										</div>
-									</div>
-									<div class="accordion-content">Interesting question. I’m a programmer. It’s what I spend most of my spare time doing. If I’m not code, I’m reading. So, if I got benefits on that, I'm so lucky!</div>
-
-									<div class="accordion-header" id="id-accordion-4">
-										<div class="accordion-icon">
-											<i class="accordion-closed icon-line-plus color gradient-text gradient-red-yellow"></i>
-											<i class="accordion-open icon-line-minus color gradient-text gradient-red-yellow"></i>
-										</div>
-										<div class="accordion-title">
-											Interest for collaborate?
-										</div>
-									</div>
-									<div class="accordion-content">I’m always open to discussing about technology, learn about programming, or partnership opportunities.</div>
-
-								</div>
-							</div>
-
-							<div class="col-lg-7">
-								<img src="images/ask.svg" alt="FAQs" class="px-5">
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="clear"></div>
-
-			</div>
-
-		</section>
-
-		<footer id="footer" class="border-0" style="background-color: #C9D6CF;">
-			<div class="container">
-				<div class="footer-widgets-wrap  m-0">
-					<div class="row justify-content-between">
-						<div class="col-md-4">
-							<div class="widget">
-
-								<h3 class="h1 mb-5">Got a Project?<br>Let's Talk!</h3>
-								<span class="text-black-50">Let me know about a job opportunity, ask a question, or just say hello!
-								</span>
-								<a href="mailto:afrizzal@gmail.com" class="h4 text-dark mt-5 mb-4 d-block"><u>afrizzal@gmail.com</u> <i class="icon-line-arrow-right position-relative ml-2" style="top: 3px"></i></a>
-								<div>
-									<a href="http://facebook.com/afrizzal" class="social-icon si-small si-colored si-facebook" target="_blank">
-										<i class="icon-facebook"></i>
-										<i class="icon-facebook"></i>
-									</a>
-									<a href="http://instagram.com/afrizzal.pro" class="social-icon si-small si-colored si-instagram" target="_blank">
-										<i class="icon-instagram"></i>
-										<i class="icon-instagram"></i>
-									</a>
-									<a href="https://www.linkedin.com/in/afrizzal/" class="social-icon si-small si-colored si-linkedin" target="_blank">
-										<i class="icon-linkedin"></i>
-										<i class="icon-linkedin"></i>
-									</a>
-									<a href="https://twitter.com/afrizzal" class="social-icon si-small si-colored si-twitter">
-										<i class="icon-twitter"></i>
-										<i class="icon-twitter"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-5">
-						</div>
-					</div>
-				</div>
-			</div>
-			<center>
-				<div class="contain-footer-info">
-					<span class="made-with">Made with</span>
-					<svg class="by-heart" version="1.1" width="50px" height="34px" viewBox="0 0 90.65 85.04">
-						<path class="by-heart-path" fill="none" stroke="#ea6b46" stroke-width="5" stroke-linecap="round"
-							stroke-linejoin="round" stroke-miterlimit="10" d="
-						M45.137,23.041c4.912-24.596,40.457-27.775,42.128-0.435c1.398,22.88-21.333,40.717-42.128,50.522 M45.137,23.041
-						C40.225-1.555,5.057-4.734,3.387,22.606c-1.398,22.88,20.955,40.717,41.75,50.522" />
-					</svg>
-					<span class="by">in<a href="h/" class="gradient-text gradient-horizon"> Trawas</a></span>
-				</div>
-				</center>
-		</footer>
-	</div>
-
-	<!--<div id="gotoTop" class="icon-double-angle-up bg-white text-dark rounded-circle shadow"></div>-->
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.js"></script>
-
-	<script>
-		jQuery(window).on( 'pluginCarouselReady', function(){
-			$('#oc-services').owlCarousel({
-				items: 1,
-				margin: 30,
-				nav: false,
-				dots: true,
-				smartSpeed: 400,
-				responsive:{
-					576: { stagePadding: 30, items: 1 },
-					768: { stagePadding: 30, items: 2 },
-					991: { stagePadding: 150, items: 3 },
-					1200: { stagePadding: 150, items: 3}
-				},
-			});
-		});
-	</script>
+  <!-- Structured Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Afrizzal",
+    "url":"https://afrizzal.github.io/",
+    "jobTitle":"Full-Stack Developer",
+    "sameAs":["https://github.com/afrizzal"]
+  }
+  </script>
 </body>
 </html>
