@@ -1,0 +1,1501 @@
+/* ============================================================
+   AFRIZZAL.GITHUB.IO — Portfolio Design System
+   GitHub-inspired dark professional theme
+   ============================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  /* GitHub-homepage ambience: deep navy base */
+  --bg-main:       #060b17;
+  --bg-card:       #0d1526;
+  --bg-elevated:   #111d33;
+  --bg-subtle:     #172036;
+  --border:        #243048;
+  --border-subtle: #172036;
+
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #6e7681;
+
+  --accent:         #3b82f6;
+  --accent-hover:   #60a5fa;
+  --accent-subtle:  rgba(59, 130, 246, 0.14);
+
+  --green:          #3fb950;
+  --green-subtle:   rgba(63, 185, 80, 0.12);
+  --orange:         #d29922;
+  --purple:         #a78bfa;
+  --purple-bright:  #8b5cf6;
+  --purple-subtle:  rgba(139, 92, 246, 0.14);
+
+  /* Ambient glow colours matching GitHub homepage */
+  --glow-purple:    rgba(124, 58, 237, 0.28);
+  --glow-purple-lg: rgba(139, 92, 246, 0.18);
+  --glow-teal:      rgba(34, 211, 238, 0.10);
+  --glow-teal-lg:   rgba(6, 182, 212, 0.07);
+
+  --radius-sm:  6px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-pill: 100px;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+
+  --transition: 0.2s ease;
+  --shadow-card: 0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-hover: 0 0 0 1px var(--accent), 0 8px 24px rgba(47,129,247,0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  /* Deep navy base + persistent ambient purple bloom + teal edges — like GitHub homepage */
+  background-color: var(--bg-main);
+  background-image:
+    radial-gradient(ellipse 110% 55% at 50% 92%,  var(--glow-purple)    0%, transparent 60%),
+    radial-gradient(ellipse  80% 45% at 50% 88%,  var(--glow-purple-lg) 0%, transparent 50%),
+    radial-gradient(ellipse  55% 40% at -5%  75%,  var(--glow-teal)      0%, transparent 55%),
+    radial-gradient(ellipse  55% 40% at 105% 75%,  var(--glow-teal-lg)   0%, transparent 55%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+
+p { margin-top: 0; color: var(--text-secondary); }
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent-hover); }
+
+.text-gradient {
+  /* Purple-to-blue gradient matching GitHub ambient palette */
+  background: linear-gradient(120deg, #a78bfa 0%, #818cf8 35%, #60a5fa 70%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-muted { color: var(--text-muted) !important; }
+.text-secondary-color { color: var(--text-secondary); }
+.font-mono { font-family: var(--font-mono); }
+
+/* ── Layout ───────────────────────────────────────────────── */
+.pf-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pf-section {
+  padding: 96px 0;
+}
+
+.pf-section-sm {
+  padding: 64px 0;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.section-subheading {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 56px;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+.pf-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  /* Deep navy with glass blur — matches GitHub top nav feel */
+  background: rgba(6, 11, 23, 0.82);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(36, 48, 72, 0.7);
+}
+
+.pf-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pf-nav-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pf-nav-logo::before {
+  content: '>';
+  color: var(--accent);
+  font-size: 0.875rem;
+}
+
+.pf-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pf-nav-links a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+
+.pf-nav-links a:hover {
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+}
+
+.pf-nav-cta {
+  font-size: 0.875rem;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text-primary) !important;
+  background: var(--bg-elevated);
+  transition: background var(--transition), border-color var(--transition);
+  font-weight: 500;
+}
+
+.pf-nav-cta:hover {
+  background: var(--bg-subtle) !important;
+  border-color: var(--accent) !important;
+  color: var(--text-primary) !important;
+}
+
+.pf-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pf-nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ── Scroll Reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Section Blend Helper ─────────────────────────────────── */
+/* Gradient divider between hero and first solid section */
+.section-blend {
+  position: relative;
+  height: 120px;
+  margin-bottom: -1px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(13,21,38,0.88) 100%);
+  pointer-events: none;
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.pf-hero {
+  padding-top: 160px;
+  padding-bottom: 140px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.pf-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* GitHub-style: strong violet bloom from below + teal halos on sides */
+  background:
+    radial-gradient(ellipse 130% 90% at 50% 130%, rgba(109, 40, 217, 0.45) 0%,  rgba(124,  58, 237, 0.20) 30%, transparent 58%),
+    radial-gradient(ellipse  90% 65% at 50% 115%, rgba(139,  92, 246, 0.30) 0%,  rgba(167, 139, 250, 0.10) 40%, transparent 60%),
+    radial-gradient(ellipse  50% 45% at  -8%  80%, rgba( 34, 211, 238, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse  50% 45% at 108%  80%, rgba(  6, 182, 212, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse  80% 30% at  50% -10%, rgba( 59, 130, 246, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pf-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  /* Fades out towards bottom where the glow takes over */
+  mask-image: radial-gradient(ellipse 90% 65% at 50% 10%, black 20%, rgba(0,0,0,0.4) 55%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 65% at 50% 10%, black 20%, rgba(0,0,0,0.4) 55%, transparent 85%);
+  opacity: 0.6;
+}
+
+/* Hero bottom gradient — thin fade at very bottom so icons can peek through */
+.pf-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(13,21,38,0.90) 100%);
+  pointer-events: none;
+  z-index: 1;   /* icons (z:4) float above this */
+}
+
+.pf-hero-inner {
+  position: relative;
+  z-index: 3;
+}
+
+/* ── Hero Floating Tech Icons ─────────────────────────────── */
+.pf-hero-float {
+  position: absolute;
+  inset: 0;            /* covers full hero area */
+  z-index: 2;          /* behind hero-inner (z:3) text — decorative background layer */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ambient glow blob — centered in hero */
+.pf-float-glow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 320px;
+  background: radial-gradient(ellipse at center,
+    rgba(139, 92, 246, 0.22) 0%,
+    rgba(109, 40, 217, 0.10) 40%,
+    transparent 70%);
+  filter: blur(48px);
+  border-radius: 50%;
+  animation: glow-breathe 4s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.80; transform: translateX(-50%) scale(1.00); }
+  50%       { opacity: 1.00; transform: translateX(-50%) scale(1.14); }
+}
+
+/* Base float icon */
+.pf-float-icon {
+  position: absolute;
+  object-fit: contain;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── Icon positions & individual animations ─── */
+
+/*
+ * Icon scatter layout — 3 vertical zones per side + 2 mid-depth center-flanks
+ * Far columns (0–10% from edge): high opacity, large → anchor the composition
+ * Mid-depth columns (12–18% from edge): medium opacity → create visual depth
+ * All icons use top% so they scale with hero height on any viewport
+ */
+
+/* ── Far-left column ───────────────── */
+
+/* TypeScript — top-left anchor */
+.pf-float-icon--ts {
+  width: 72px;
+  top: 10%;
+  left: 3%;
+  opacity: 0.78;
+  filter: drop-shadow(0 8px 20px rgba(96, 165, 250, 0.55))
+          drop-shadow(0 2px  8px rgba(0,0,0,0.4));
+  animation: fi-float-c 6.8s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+
+/* Kubernetes — mid-left anchor */
+.pf-float-icon--k8s {
+  width: 60px;
+  top: 42%;
+  left: 1%;
+  opacity: 0.72;
+  filter: drop-shadow(0 6px 16px rgba(59, 130, 246, 0.45))
+          drop-shadow(0 2px  5px rgba(0,0,0,0.3));
+  animation: fi-float-b 8.5s ease-in-out infinite;
+  animation-delay: -7.0s;
+}
+
+/* PostgreSQL — bottom-left anchor */
+.pf-float-icon--pg {
+  width: 66px;
+  top: 72%;
+  left: 4%;
+  opacity: 0.76;
+  filter: drop-shadow(0 6px 18px rgba(120, 80, 230, 0.52))
+          drop-shadow(0 2px  6px rgba(0,0,0,0.35));
+  animation: fi-float-a 6.4s ease-in-out infinite;
+  animation-delay: -0.6s;
+}
+
+/* ── Far-right column ──────────────── */
+
+/* React — top-right anchor */
+.pf-float-icon--react {
+  width: 88px;
+  top: 8%;
+  right: 2%;
+  opacity: 0.82;
+  filter: drop-shadow(0 8px 24px rgba(34, 211, 238, 0.58))
+          drop-shadow(0 2px  8px rgba(0,0,0,0.4));
+  animation: fi-float-a 5.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+/* Docker — mid-right anchor */
+.pf-float-icon--docker {
+  width: 64px;
+  top: 44%;
+  right: 3%;
+  opacity: 0.74;
+  filter: drop-shadow(0 6px 18px rgba(59, 130, 246, 0.48))
+          drop-shadow(0 2px  6px rgba(0,0,0,0.35));
+  animation: fi-float-c 5.8s ease-in-out infinite;
+  animation-delay: -4.2s;
+}
+
+/* Node.js — bottom-right anchor */
+.pf-float-icon--node {
+  width: 78px;
+  top: 72%;
+  right: 2%;
+  opacity: 0.80;
+  filter: drop-shadow(0 8px 22px rgba(63, 185, 80, 0.52))
+          drop-shadow(0 2px  8px rgba(0,0,0,0.4));
+  animation: fi-float-b 8.0s ease-in-out infinite;
+  animation-delay: -3.5s;
+}
+
+/* ── Mid-depth left flank ───────────── */
+
+/* MongoDB — upper inner-left, semi-transparent for depth */
+.pf-float-icon--mongo {
+  width: 58px;
+  top: 20%;
+  left: 14%;
+  opacity: 0.48;
+  filter: drop-shadow(0 6px 16px rgba(63, 185, 80, 0.40))
+          drop-shadow(0 2px  5px rgba(0,0,0,0.3));
+  animation: fi-float-a 9.0s ease-in-out infinite;
+  animation-delay: -6.5s;
+}
+
+/* Go Gopher — lower inner-left, semi-transparent */
+.pf-float-icon--golang {
+  width: 74px;
+  top: 62%;
+  left: 13%;
+  opacity: 0.52;
+  filter: drop-shadow(0 8px 20px rgba(59, 130, 246, 0.45))
+          drop-shadow(0 2px  8px rgba(0,0,0,0.4));
+  animation: fi-float-b 7.2s ease-in-out infinite;
+  animation-delay: -2.0s;
+}
+
+/* ── Mid-depth right flank ──────────── */
+
+/* AWS — upper inner-right, semi-transparent */
+.pf-float-icon--aws {
+  width: 72px;
+  top: 26%;
+  right: 13%;
+  opacity: 0.50;
+  filter: drop-shadow(0 6px 18px rgba(210, 153, 34, 0.48))
+          drop-shadow(0 2px  6px rgba(0,0,0,0.35));
+  animation: fi-float-c 7.0s ease-in-out infinite;
+  animation-delay: -5.3s;
+}
+
+/* Small sparkle dots scattered in float zone */
+.pf-float-sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: sparkle-twinkle 3s ease-in-out infinite;
+}
+.pf-float-sparkle--1 { width:3px; height:3px; top:15%; left:22%;  animation-delay:0s;    opacity:0.55; }
+.pf-float-sparkle--2 { width:2px; height:2px; top:35%; right:22%; animation-delay:1.0s;  opacity:0.45; }
+.pf-float-sparkle--3 { width:3px; height:3px; top:58%; left:8%;   animation-delay:0.5s;  opacity:0.40; }
+.pf-float-sparkle--4 { width:2px; height:2px; top:68%; right:9%;  animation-delay:2.0s;  opacity:0.45; }
+.pf-float-sparkle--5 { width:2px; height:2px; top:82%; left:30%;  animation-delay:1.5s;  opacity:0.35; }
+
+@keyframes sparkle-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%       { opacity: 0.8; transform: scale(1.5); }
+}
+
+/* ── Float Keyframes ──────────────────────────────────────── */
+@keyframes fi-float-a {
+  0%   { transform: translateY(0px)    rotate(-4deg) scale(1.00); }
+  25%  { transform: translateY(-14px)  rotate( 2deg) scale(1.02); }
+  50%  { transform: translateY(-22px)  rotate(-1deg) scale(1.03); }
+  75%  { transform: translateY(-10px)  rotate( 3deg) scale(1.01); }
+  100% { transform: translateY(0px)    rotate(-4deg) scale(1.00); }
+}
+
+@keyframes fi-float-b {
+  0%   { transform: translateY(-10px) rotate( 5deg) scale(1.01); }
+  30%  { transform: translateY( 12px) rotate(-3deg) scale(0.98); }
+  65%  { transform: translateY(-16px) rotate( 4deg) scale(1.02); }
+  100% { transform: translateY(-10px) rotate( 5deg) scale(1.01); }
+}
+
+@keyframes fi-float-c {
+  0%   { transform: translateY(  8px) rotate( 2deg) scale(1.00); }
+  40%  { transform: translateY(-18px) rotate(-4deg) scale(1.03); }
+  70%  { transform: translateY( -4px) rotate( 1deg) scale(0.99); }
+  100% { transform: translateY(  8px) rotate( 2deg) scale(1.00); }
+}
+
+/* Responsive: hide mid-depth icons on tablet to avoid content overlap */
+@media (max-width: 1024px) {
+  /* Hide mid-depth flanks — too close to content on narrower screens */
+  .pf-float-icon--mongo  { display: none; }
+  .pf-float-icon--golang { display: none; }
+  .pf-float-icon--aws    { display: none; }
+  /* Shrink far-column icons slightly */
+  .pf-float-icon--react  { width: 72px; }
+  .pf-float-icon--ts     { width: 60px; }
+  .pf-float-icon--node   { width: 64px; }
+  .pf-float-icon--k8s    { width: 50px; }
+  .pf-float-icon--pg     { width: 54px; }
+  .pf-float-icon--docker { width: 52px; }
+  .pf-float-glow-center  { width: 340px; height: 220px; }
+}
+
+@media (max-width: 768px) {
+  /* Keep only the 6 far-column icons, shrunk further */
+  .pf-float-icon--react  { width: 58px; top: 6%;  }
+  .pf-float-icon--ts     { width: 50px; top: 8%;  }
+  .pf-float-icon--node   { width: 52px; top: 74%; }
+  .pf-float-icon--pg     { width: 44px; top: 74%; }
+  .pf-float-icon--docker { width: 42px; top: 46%; }
+  .pf-float-icon--k8s    { width: 40px; top: 44%; }
+  .pf-float-sparkle      { display: none; }
+  .pf-float-glow-center  { width: 240px; height: 160px; }
+}
+
+@media (max-width: 480px) {
+  /* Mobile: only 4 icons in corners, very small */
+  .pf-float-icon--react  { width: 48px; top: 5%;  right: 3%; }
+  .pf-float-icon--ts     { width: 42px; top: 7%;  left: 3%; }
+  .pf-float-icon--node   { width: 44px; top: 76%; right: 3%; }
+  .pf-float-icon--pg     { width: 38px; top: 76%; left: 4%; }
+  .pf-float-icon--docker { display: none; }
+  .pf-float-icon--k8s    { display: none; }
+}
+
+.pf-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+  /* Purple badge — sits beautifully on the violet ambient background */
+  color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 28px;
+}
+
+.pf-hero-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a78bfa;
+  animation: pulse-purple 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-purple {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(167, 139, 250, 0.4); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(167, 139, 250, 0); }
+}
+
+.pf-hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  cursor: default;
+}
+
+/* "Afrizzal" — shifts to cyan on hover */
+.name-first {
+  display: inline-block;
+  color: var(--text-primary);
+  transition: color 0.45s ease;
+  position: relative;
+}
+
+.pf-hero-name:hover .name-first {
+  color: #22d3ee;  /* teal/cyan like SG's first name */
+}
+
+/* "P Pratama" — gradient hue-shifts on hover */
+.name-last {
+  transition: filter 0.45s ease;
+}
+
+.pf-hero-name:hover .name-last {
+  filter: hue-rotate(40deg) brightness(1.15) saturate(1.2);
+}
+
+/* ── Typewriter subtitle ───────────────────────────────────── */
+.pf-hero-title {
+  font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+  font-weight: 500;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  min-height: 2.2em;   /* prevent layout shift while typing */
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* The role text — color set dynamically by JS */
+#tw-text {
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* Blinking cursor */
+#tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  background: currentColor;
+  margin-left: 3px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: tw-blink 0.75s step-end infinite;
+}
+
+@keyframes tw-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.pf-hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.pf-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn-pf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+  font-family: var(--font-sans);
+}
+
+.btn-pf-primary {
+  background: var(--accent);
+  color: #fff !important;
+  border-color: var(--accent);
+}
+
+.btn-pf-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(47,129,247,0.35);
+}
+
+.btn-pf-outline {
+  background: transparent;
+  color: var(--text-primary) !important;
+  border-color: var(--border);
+}
+
+.btn-pf-outline:hover {
+  background: var(--bg-elevated);
+  border-color: var(--text-secondary);
+  color: var(--text-primary) !important;
+  transform: translateY(-1px);
+}
+
+.btn-pf-ghost {
+  background: transparent;
+  color: var(--text-secondary) !important;
+  border-color: transparent;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.btn-pf-ghost:hover {
+  color: var(--text-primary) !important;
+  background: var(--bg-elevated);
+}
+
+/* ── About / Stats ────────────────────────────────────────── */
+.pf-about {
+  /* Glassmorphism section — semi-transparent so body glow bleeds through */
+  background: rgba(13, 21, 38, 0.82);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-top: none;    /* removed hard cut — hero::after handles the blend */
+  border-bottom: 1px solid rgba(36, 48, 72, 0.35);
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.07) 0%, transparent 70%);
+}
+
+.pf-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.pf-about-text h2 {
+  margin-bottom: 20px;
+}
+
+.pf-about-text p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.pf-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pf-stat-card {
+  /* Glass card */
+  background: rgba(17, 29, 51, 0.60);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.pf-stat-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.12), inset 0 0 20px rgba(59, 130, 246, 0.04);
+  transform: translateY(-2px);
+}
+
+.pf-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.pf-stat-number span {
+  color: var(--accent);
+}
+
+.pf-stat-label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+/* ── Experience ───────────────────────────────────────────── */
+.pf-experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pf-exp-card {
+  /* Glass card — body glow visible through blur */
+  background: rgba(13, 21, 38, 0.55);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(36, 48, 72, 0.55);
+  border-radius: var(--radius-xl);
+  padding: 28px 32px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #a78bfa);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.pf-exp-card:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow:
+    0 8px 32px rgba(109, 40, 217, 0.18),
+    0 0 0 1px rgba(139, 92, 246, 0.20),
+    inset 0 0 40px rgba(139, 92, 246, 0.04);
+  transform: translateY(-3px);
+}
+
+.pf-exp-card:hover::before {
+  opacity: 1;
+}
+
+.pf-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.pf-exp-company {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pf-exp-period {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.pf-exp-role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.pf-exp-location {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pf-exp-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pf-exp-highlight {
+  display: flex;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  align-items: flex-start;
+}
+
+.pf-exp-highlight::before {
+  content: '▸';
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+.pf-exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pf-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  font-family: var(--font-mono);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.pf-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pf-tag-accent {
+  border-color: rgba(47,129,247,0.4);
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.pf-tag-purple {
+  border-color: rgba(163,113,247,0.4);
+  color: var(--purple);
+  background: var(--purple-subtle);
+}
+
+.pf-tag-green {
+  border-color: rgba(63,185,80,0.4);
+  color: var(--green);
+  background: var(--green-subtle);
+}
+
+/* ── Skills ───────────────────────────────────────────────── */
+.pf-skills-bg {
+  background: rgba(13, 21, 38, 0.80);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-top: 1px solid rgba(36, 48, 72, 0.28);
+  border-bottom: 1px solid rgba(36, 48, 72, 0.28);
+  background-image: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(139,92,246,0.08) 0%, transparent 65%);
+}
+
+.pf-skill-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pf-skill-group {
+  background: rgba(17, 29, 51, 0.55);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(36, 48, 72, 0.50);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-skill-group:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 4px 24px rgba(109, 40, 217, 0.10);
+}
+
+.pf-skill-group-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pf-skill-group-icon {
+  font-size: 1rem;
+}
+
+.pf-skill-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pf-skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+
+.pf-skill-pill:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.pf-skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-blue   { background: var(--accent); }
+.dot-purple { background: var(--purple); }
+.dot-green  { background: var(--green); }
+.dot-orange { background: var(--orange); }
+
+/* ── Tech Stack ───────────────────────────────────────────── */
+.pf-stack-featured {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.pf-stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: rgba(13, 21, 38, 0.50);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(36, 48, 72, 0.50);
+  border-radius: var(--radius-lg);
+  padding: 20px 12px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.pf-stack-item:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 32px rgba(59, 130, 246, 0.18),
+    inset 0 0 20px rgba(59, 130, 246, 0.05);
+}
+
+.pf-stack-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.pf-stack-item-name {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+/* Stack tabs (full stack) */
+.pf-stack-tabs {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.pf-stack-tab {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  font-weight: 500;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--font-sans);
+}
+
+.pf-stack-tab.active,
+.pf-stack-tab:hover {
+  color: var(--text-primary);
+}
+
+.pf-stack-tab.active {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.pf-stack-panel {
+  display: none;
+}
+
+.pf-stack-panel.active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.pf-stack-panel img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(30%) brightness(0.85);
+  transition: filter var(--transition), transform var(--transition);
+  cursor: default;
+}
+
+.pf-stack-panel img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.08);
+}
+
+/* ── Certifications ───────────────────────────────────────── */
+.pf-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pf-cert-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(13, 21, 38, 0.55);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(36, 48, 72, 0.50);
+  border-radius: var(--radius-xl);
+  padding: 20px 24px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease,
+              background 0.3s ease;
+  /* <a> reset */
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Subtle "clickable" top-left indicator */
+.pf-cert-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(135deg, rgba(59,130,246,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pf-cert-card:hover {
+  border-color: rgba(210, 153, 34, 0.50);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(210, 153, 34, 0.14),
+              0 0 0 1px rgba(210, 153, 34, 0.12);
+  background: rgba(13, 21, 38, 0.72);
+}
+
+.pf-cert-card:hover::after {
+  opacity: 1;
+}
+
+/* Focus ring for keyboard navigation */
+.pf-cert-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.pf-cert-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.pf-cert-icon-oracle { background: rgba(210,153,34,0.18); border: 1px solid rgba(210,153,34,0.20); }
+.pf-cert-icon-google { background: rgba(59,130,246,0.14); border: 1px solid rgba(59,130,246,0.18); }
+.pf-cert-icon-pm     { background: rgba(63,185,80,0.14);  border: 1px solid rgba(63,185,80,0.18);  }
+
+.pf-cert-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pf-cert-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* External link icon inside the cert name */
+.pf-cert-ext {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  margin-top: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.pf-cert-card:hover .pf-cert-ext {
+  opacity: 1;
+  color: var(--accent-hover);
+}
+
+.pf-cert-issuer {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Issuer badge dot */
+.pf-cert-issuer::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ── Education ────────────────────────────────────────────── */
+.pf-edu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(13, 21, 38, 0.55);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(36, 48, 72, 0.50);
+  border-radius: var(--radius-xl);
+  padding: 24px 28px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-edu-card:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.10);
+}
+
+.pf-edu-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.pf-edu-degree {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.pf-edu-school {
+  font-size: 0.9375rem;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+
+.pf-edu-period {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── Contact ──────────────────────────────────────────────── */
+.pf-contact {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  background-image:
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(109,40,217,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0%  80%,  rgba(34,211,238,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 80%, rgba(34,211,238,0.05) 0%, transparent 55%);
+}
+
+.pf-contact-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pf-contact-inner h2 {
+  margin-bottom: 16px;
+}
+
+.pf-contact-inner p {
+  font-size: 1.0625rem;
+  margin-bottom: 36px;
+}
+
+.pf-contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  padding: 14px 28px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(59, 130, 246, 0.30);
+  background: rgba(17, 29, 51, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+  font-family: var(--font-mono);
+}
+
+.pf-contact-email:hover {
+  border-color: rgba(59, 130, 246, 0.65);
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--accent-hover) !important;
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 36px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(59, 130, 246, 0.20);
+}
+
+.pf-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pf-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary) !important;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.pf-social-link:hover {
+  color: var(--text-primary) !important;
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.pf-footer {
+  background: var(--bg-main);
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.pf-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pf-footer-copy {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.pf-footer-copy a {
+  color: var(--text-secondary);
+}
+
+.pf-footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.pf-footer-links a {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.pf-footer-links a:hover {
+  color: var(--text-secondary);
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+.pf-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── Mobile Nav Menu ──────────────────────────────────────── */
+.pf-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  z-index: 99;
+}
+
+.pf-mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pf-mobile-menu a {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.pf-mobile-menu a:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pf-section { padding: 64px 0; }
+  .pf-about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .pf-stats { grid-template-columns: 1fr 1fr; }
+  .pf-skill-groups { grid-template-columns: 1fr; }
+  .pf-stack-featured { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .pf-cert-grid { grid-template-columns: 1fr; }
+  .pf-nav-links { display: none; }
+  .pf-nav-hamburger { display: flex; }
+  .pf-hero-cta { flex-direction: column; align-items: flex-start; }
+  .pf-exp-header { flex-direction: column; gap: 8px; }
+  .pf-footer-inner { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .pf-container { padding: 0 16px; }
+  .pf-stack-featured { grid-template-columns: repeat(2, 1fr); }
+  .pf-stats { grid-template-columns: 1fr; }
+  .pf-contact-email { font-size: 1rem; }
+}
+
+/* ── Utility ──────────────────────────────────────────────── */
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.mb-0 { margin-bottom: 0; }
+.mt-auto { margin-top: auto; }
+
+/* SVG icon inline helper */
+.icon-svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}

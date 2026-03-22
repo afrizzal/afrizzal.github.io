@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /d/Aff/proj/afrizzal.github.io/concept/icon/1.png /d/Aff/proj/afrizzal.github.io/images/icons/react-3d.png)",
+      "Bash(cp /d/Aff/proj/afrizzal.github.io/concept/icon/2.png /d/Aff/proj/afrizzal.github.io/images/icons/golang-3d.png)",
+      "Bash(cp /d/Aff/proj/afrizzal.github.io/concept/icon/3.png /d/Aff/proj/afrizzal.github.io/images/icons/nextjs-3d.png)",
+      "Bash(cp /d/Aff/proj/afrizzal.github.io/concept/icon/4.png /d/Aff/proj/afrizzal.github.io/images/icons/typescript-3d.png)",
+      "Bash(cp /d/Aff/proj/afrizzal.github.io/concept/icon/5.png /d/Aff/proj/afrizzal.github.io/images/icons/postgresql-3d.png)",
+      "Bash(git check-ignore:*)",
+      "Bash(grep -r \"D:\\\\\\\\Aff\\\\|concept/\" /d/Aff/proj/afrizzal.github.io/index.html /d/Aff/proj/afrizzal.github.io/css/portfolio.css)",
+      "Bash(grep -c \"concept\\\\|D:\\\\\\\\Aff\" /d/Aff/proj/afrizzal.github.io/index.html /d/Aff/proj/afrizzal.github.io/css/portfolio.css)",
+      "Bash(git -C /d/Aff/proj/afrizzal.github.io status --short)"
+    ]
+  }
+}
