@@ -1464,24 +1464,79 @@ a:hover { color: var(--accent-hover); }
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* Sections */
   .pf-section { padding: 64px 0; }
+  .pf-section-sm { padding: 48px 0; }
+  .section-subheading { margin-bottom: 40px; }
+
+  /* Hero */
+  .pf-hero { padding-top: 100px; padding-bottom: 80px; }
+  .pf-hero-desc { font-size: 1rem; }
+  .pf-hero-cta { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* Nav — hide desktop links and CTA button, show hamburger */
+  .pf-nav-links { display: none; }
+  .pf-nav-inner > a.btn-pf { display: none; }
+  .pf-nav-hamburger { display: flex; background: none; border: none; }
+
+  /* About */
   .pf-about-grid { grid-template-columns: 1fr; gap: 40px; }
   .pf-stats { grid-template-columns: 1fr 1fr; }
-  .pf-skill-groups { grid-template-columns: 1fr; }
-  .pf-stack-featured { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .pf-cert-grid { grid-template-columns: 1fr; }
-  .pf-nav-links { display: none; }
-  .pf-nav-hamburger { display: flex; }
-  .pf-hero-cta { flex-direction: column; align-items: flex-start; }
+
+  /* Experience */
+  .pf-exp-card { padding: 20px; }
   .pf-exp-header { flex-direction: column; gap: 8px; }
+
+  /* Education */
+  .pf-edu-card { padding: 16px 20px; }
+
+  /* Skills */
+  .pf-skill-groups { grid-template-columns: 1fr; }
+
+  /* Stack */
+  .pf-stack-featured { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .pf-stack-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .pf-stack-tab { white-space: nowrap; flex-shrink: 0; }
+
+  /* Certs */
+  .pf-cert-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .pf-contact-email { padding: 12px 20px; }
+
+  /* Footer */
   .pf-footer-inner { flex-direction: column; text-align: center; }
+  .pf-footer-links { justify-content: center; }
 }
 
 @media (max-width: 480px) {
+  /* Layout */
   .pf-container { padding: 0 16px; }
-  .pf-stack-featured { grid-template-columns: repeat(2, 1fr); }
+  .pf-section { padding: 48px 0; }
+
+  /* Hero */
+  .pf-hero { padding-top: 80px; padding-bottom: 60px; }
+  .pf-hero-cta { gap: 8px; }
+  .pf-hero-cta .btn-pf { width: 100%; justify-content: center; }
+
+  /* About */
   .pf-stats { grid-template-columns: 1fr; }
-  .pf-contact-email { font-size: 1rem; }
+  .pf-stat-card { padding: 16px 18px; }
+
+  /* Experience */
+  .pf-exp-card { padding: 16px; }
+
+  /* Stack */
+  .pf-stack-featured { grid-template-columns: repeat(2, 1fr); }
+
+  /* Certs */
+  .pf-cert-card { padding: 14px 16px; gap: 12px; }
+  .pf-cert-icon { width: 38px; height: 38px; font-size: 1rem; }
+
+  /* Contact */
+  .pf-contact-email { font-size: 0.875rem; padding: 10px 16px; }
+  .pf-social-links { gap: 8px; }
+  .pf-social-link { font-size: 0.8125rem; padding: 8px 14px; }
 }
 
 /* ── Utility ──────────────────────────────────────────────── */
